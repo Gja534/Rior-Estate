@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rior Estate – Prona premium në Shqipëri</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14161c;--muted:#5d6472;--line:#ece7da;--paper:#fff;--soft:#faf8f3;
+--gold:linear-gradient(115deg,#9c7421 0%,#e3c067 26%,#fff1b8 46%,#d3a73f 66%,#9c7421 100%);--gold-solid:#b88a2a;
+color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:90px;scroll-behavior:smooth;height:100%}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:rgba(255,255,255,.85);backdrop-filter:blur(14px);z-index:30}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;margin:0;line-height:1.05;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.gold-text{background:var(--gold);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 6s ease-in-out infinite}
+@keyframes sheen{0%,100%{background-position:0 0}50%{background-position:100% 0}}
+
+/* nav */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;padding:12px 0}
+.bar .in{display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(255,255,255,.78);backdrop-filter:blur(18px) saturate(1.4);border:1px solid var(--line);border-radius:999px;padding:8px 8px 8px 22px;box-shadow:0 8px 30px -12px rgba(120,90,20,.25)}
+.logo{font:700 1.45rem "Cormorant Garamond",serif;display:flex;align-items:center;gap:10px}
+.mark{width:26px;height:26px;border-radius:8px;background:var(--gold);box-shadow:inset 0 0 0 1px rgba(255,255,255,.6),0 2px 8px rgba(184,138,42,.5)}
+nav{display:flex;gap:26px;font-weight:600;font-size:.95rem;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+/* buttons */
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 .98rem Manrope,sans-serif;border:0;border-radius:999px;padding:14px 26px;cursor:pointer;color:#0a0a0a;background:var(--gold);background-size:200% 100%;box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 -2px 6px rgba(120,80,0,.25),0 10px 24px -8px rgba(184,138,42,.7);transition:transform .25s,box-shadow .25s,background-position .6s}
+.btn::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.85),transparent);transform:skewX(-20deg);transition:left .7s}
+.btn:hover{transform:translateY(-2px);background-position:100% 0;box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 16px 32px -8px rgba(184,138,42,.85)}
+.btn:hover::after{left:130%}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn.ghost{color:var(--ink);background:linear-gradient(#fff,#fff) padding-box,var(--gold) border-box;border:1.5px solid transparent;box-shadow:0 6px 18px -10px rgba(0,0,0,.2)}
+.btn.sm{padding:11px 20px}
+:focus-visible{outline:3px solid var(--gold-solid);outline-offset:3px}
+
+/* hero */
+.hero{position:relative;padding:56px 0 70px;background:radial-gradient(60% 50% at 85% 10%,rgba(227,192,103,.28),transparent 70%),radial-gradient(40% 40% at 5% 90%,rgba(227,192,103,.16),transparent 70%)}
+.pill{display:inline-flex;gap:8px;align-items:center;font-weight:600;font-size:.88rem;border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px;box-shadow:0 4px 14px -8px rgba(0,0,0,.2)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(227,192,103,.3)}
+.hero h1{font-size:clamp(3rem,8vw,6.2rem);font-weight:600;margin:22px 0 20px;max-width:12ch}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:50ch;margin:0 0 34px}
+.search{display:grid;grid-template-columns:repeat(4,1fr) auto;gap:6px;align-items:end;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:28px;padding:12px;box-shadow:0 30px 60px -30px rgba(120,90,20,.4),0 2px 0 #fff inset}
+label{display:flex;flex-direction:column;gap:2px;font-size:.78rem;font-weight:600;color:var(--muted);padding:8px 16px;border-radius:18px}
+label:hover{background:var(--soft)}
+select,input,textarea{font:600 1rem Manrope,sans-serif;color:var(--ink);background:transparent;border:0;outline:0;padding:2px 0;width:100%}
+.stats{display:flex;flex-wrap:wrap;gap:34px;margin-top:40px}
+.stats b{font:600 2.4rem "Cormorant Garamond",serif;display:block;line-height:1}
+.stats span{color:var(--muted);font-size:.9rem}
+
+section{padding:64px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+h2{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:600}
+.sub{color:var(--muted);margin:8px 0 0}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font:600 .9rem Manrope,sans-serif;border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 18px;cursor:pointer;transition:.2s}
+.chip:hover{border-color:var(--gold-solid)}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:26px;overflow:hidden;transition:transform .3s,box-shadow .3s;box-shadow:0 14px 30px -22px rgba(0,0,0,.35)}
+.card:hover{transform:translateY(-5px);box-shadow:0 30px 50px -26px rgba(150,110,20,.55);border-color:#e3c067}
+.thumb{height:180px;position:relative;display:flex;align-items:flex-end;padding:16px;color:#fff;font:600 1.7rem "Cormorant Garamond",serif;overflow:hidden}
+.thumb::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 40%,rgba(255,240,180,.35) 50%,transparent 60%);background-size:250% 100%;animation:sheen 5s ease-in-out infinite}
+.thumb svg{position:absolute;right:-6px;bottom:-4px;width:62%;opacity:.28}
+.badge{position:absolute;top:14px;left:14px;font:700 .78rem Manrope,sans-serif;color:#0a0a0a;background:var(--gold);border-radius:999px;padding:5px 13px;box-shadow:0 4px 12px -4px rgba(0,0,0,.4)}
+.card .b{padding:20px 22px 22px}
+.card h3{font-size:1.5rem;font-weight:600}
+.price{font:700 1.7rem "Cormorant Garamond",serif;margin:8px 0 4px;color:#8a6414}
+.meta{color:var(--muted);font-size:.92rem}
+.empty{padding:36px;border:1px dashed #d9c58a;border-radius:22px;color:var(--muted);background:var(--soft)}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.tile{background:var(--soft);border:1px solid var(--line);border-radius:28px;padding:30px;grid-column:span 2;min-height:210px;display:flex;flex-direction:column;justify-content:flex-end;transition:.3s}
+.tile:hover{border-color:#e3c067;background:#fff;box-shadow:0 24px 44px -28px rgba(150,110,20,.5)}
+.tile.big{grid-column:span 3}
+.tile.dark{background:#14161c;color:#fff;border-color:#14161c}
+.tile.dark p{color:#c9ccd4}
+.tile h3{font-size:1.7rem;margin-bottom:8px}
+.tile p{margin:0;color:var(--muted)}
+.ico{width:46px;height:46px;border-radius:15px;background:var(--gold);margin-bottom:auto;display:grid;place-items:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 8px 18px -8px rgba(184,138,42,.8)}
+.ico svg{width:22px;height:22px;stroke:#0a0a0a;fill:none;stroke-width:2}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:48px;border-radius:36px;background:#14161c;color:#fff;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;width:420px;height:420px;right:-120px;top:-160px;border-radius:50%;background:radial-gradient(circle,rgba(227,192,103,.45),transparent 70%)}
+.contact>*{position:relative}
+.contact p{color:#c9ccd4;margin:10px 0}
+form{display:grid;gap:10px}
+form label{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#c9ccd4}
+form input,form textarea{color:#fff}
+#ok{font-weight:600;color:#f1d98c;min-height:1.5em}
+footer{padding:36px 0 44px;color:var(--muted);font-size:.9rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+.util{background:#14161c;color:#d6d9e0;font-size:.85rem}.util .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}.util a{margin-left:14px;color:#f1d98c;font-weight:600}.tabs{display:inline-flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px;margin-bottom:12px;box-shadow:0 8px 20px -14px rgba(0,0,0,.4)}.tabs button,.tabs a{font:700 .92rem Manrope,sans-serif;border:0;background:transparent;border-radius:999px;padding:10px 22px;cursor:pointer;color:var(--muted)}.tabs [aria-pressed="true"]{background:var(--gold);color:#0a0a0a;box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative}.tl>div{border-top:3px solid transparent;border-image:var(--gold) 1;padding-top:20px}.tl b{font:600 3.2rem "Cormorant Garamond",serif;display:block;line-height:1;background:var(--gold);-webkit-background-clip:text;background-clip:text;color:transparent}.tl h3{font-size:1.5rem;margin:8px 0 4px}.tl p{margin:0;color:var(--muted)}.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}.net div{border:1px solid var(--line);border-radius:20px;padding:16px 18px;background:#fff;display:flex;justify-content:space-between;align-items:center;font-weight:600;transition:.25s}.net div:hover{border-color:#e3c067;box-shadow:0 14px 26px -18px rgba(150,110,20,.6)}.net span{font:700 1.3rem "Cormorant Garamond",serif;color:#8a6414}.band{border-radius:36px;padding:52px;background:#14161c;color:#fff;position:relative;overflow:hidden;display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center}.band::before{content:"";position:absolute;width:460px;height:460px;left:-140px;bottom:-220px;border-radius:50%;background:radial-gradient(circle,rgba(227,192,103,.4),transparent 70%)}.band>*{position:relative}.band p{color:#c9ccd4}.band ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}.band li{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:16px 20px}.band .btn{margin:6px 10px 0 0}.band.light{background:var(--soft);color:var(--ink);border:1px solid var(--line)}.band.light p{color:var(--muted)}.band.light li{background:#fff;border-color:var(--line)}.band.light::before{display:none}.blog{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}.blog article{border:1px solid var(--line);border-radius:26px;padding:26px;background:#fff;transition:.3s}.blog article:hover{border-color:#e3c067;transform:translateY(-4px)}.blog small{color:#8a6414;font-weight:700}.blog h3{font-size:1.5rem;margin:8px 0}.blog p{margin:0;color:var(--muted)}.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:50}@media(max-width:860px){.tl,.band{grid-template-columns:1fr}.band{padding:28px}nav{display:none}.search{grid-template-columns:1fr 1fr;border-radius:24px}.search .btn{grid-column:1/-1}.bento{grid-template-columns:1fr}.tile,.tile.big{grid-column:auto;min-height:170px}.contact{grid-template-columns:1fr;padding:28px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+:root{--gold:linear-gradient(115deg,#8f8f8f 0%,#e9e9e9 28%,#fff 47%,#c9c9c9 66%,#8a8a8a 100%);--gold-solid:#fff;--line:#262626;--muted:#a9a9a9;--ink:#f4f4f4;color-scheme:dark}
+html,body{background:#000}body{color:#f4f4f4}body::before{background:rgba(0,0,0,.85)}
+.util{background:#0a0a0a;border-bottom:1px solid #1c1c1c}.util a{color:#fff}
+.bar .in{background:rgba(12,12,12,.75);border-color:#262626;box-shadow:0 10px 30px -12px rgba(255,255,255,.12)}
+nav{color:#b5b5b5}nav a:hover{color:#fff}
+.logo{gap:12px;color:#fff}.logo svg{width:26px;height:29px}.logo b{display:block;font:600 1.45rem/1 "Cormorant Garamond",serif;letter-spacing:.34em}.logo small{display:block;font:500 .6rem/1 Manrope,sans-serif;letter-spacing:.55em;margin-top:5px;color:#cfcfcf}
+.btn{color:#0a0a0a;box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -2px 6px rgba(0,0,0,.25),0 10px 30px -10px rgba(255,255,255,.35)}.btn:hover{box-shadow:inset 0 1px 0 #fff,0 16px 40px -10px rgba(255,255,255,.5)}
+.btn.ghost{color:#fff;background:linear-gradient(#000,#000) padding-box,var(--gold) border-box;box-shadow:none}
+.band.light .btn{background:#0a0a0a;color:#fff;box-shadow:0 10px 24px -10px rgba(0,0,0,.5)}
+.hero{background:radial-gradient(55% 55% at 88% 12%,rgba(255,255,255,.14),transparent 70%)}
+.pill{background:#111;border-color:#2e2e2e;color:#eee;box-shadow:none}
+.tabs{background:#111;border-color:#2e2e2e;box-shadow:none}.tabs button,.tabs a{color:#bbb}.tabs [aria-pressed="true"]{color:#0a0a0a}
+.search{background:rgba(18,18,18,.8);border-color:#2a2a2a;box-shadow:0 30px 60px -30px rgba(255,255,255,.18)}
+label{color:#a9a9a9}label:hover{background:#1a1a1a}select,input,textarea{color:#fff}select option{color:#000;background:#fff}
+.chip{background:transparent;border-color:#333;color:#ddd}.chip:hover{border-color:#fff}.chip[aria-pressed="true"]{background:#fff;color:#000;border-color:#fff}
+.card{color:#0d0d0d;border-color:#262626;box-shadow:0 20px 40px -26px rgba(255,255,255,.2)}.card:hover{border-color:#fff;box-shadow:0 30px 50px -26px rgba(255,255,255,.3)}.price{color:#0d0d0d}.meta{color:#555}.thumb{filter:grayscale(1) contrast(1.1)}
+.empty{background:#0f0f0f;border-color:#444;color:#aaa}
+.net div{background:#0f0f0f;border-color:#262626;color:#fff}.net div:hover{border-color:#fff;box-shadow:none}.net span{color:#fff}
+.tile{background:#0f0f0f;border-color:#262626;color:#fff}.tile:hover{border-color:#fff;background:#141414;box-shadow:none}.tile.dark{background:linear-gradient(135deg,#d4d4d4,#fff 50%,#bdbdbd);color:#0a0a0a}.tile.dark p{color:#333}
+.blog article{background:#0f0f0f;border-color:#262626}.blog article:hover{border-color:#fff}.blog small{color:#d0d0d0}
+.band{background:#0f0f0f;border:1px solid #262626}.band::before{background:radial-gradient(circle,rgba(255,255,255,.16),transparent 70%)}.band.light{background:#f4f4f2;color:#0d0d0d}.band.light p{color:#555}.band.light li{background:#fff;border-color:#ddd;color:#0d0d0d}
+.contact{background:#0f0f0f;border:1px solid #262626}.contact::before{background:radial-gradient(circle,rgba(255,255,255,.16),transparent 70%)}form label{background:#161616;border-color:#2e2e2e}#ok{color:#fff}
+:focus-visible{outline-color:#fff}
+.heromark{position:absolute;right:2%;top:24px;width:min(26vw,300px);height:auto;filter:drop-shadow(0 20px 60px rgba(255,255,255,.18))}
+.hl{animation:hl 1.4s cubic-bezier(.2,.8,.2,1) both}.hr{animation:hr 1.4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes hl{from{transform:translateX(-18px);opacity:0}}@keyframes hr{from{transform:translateX(18px);opacity:0}}
+@media(max-width:860px){.heromark{display:none}}
+
+.team{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}.ag{background:#0f0f0f;border:1px solid #262626;border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:4px}.ag:hover{border-color:#fff}.av{width:52px;height:52px;border-radius:50%;background:var(--gold);color:#0a0a0a;display:grid;place-items:center;font:700 1.5rem "Cormorant Garamond",serif;margin-bottom:8px}.ag span{color:#a9a9a9;font-size:.9rem}.ag a{color:#fff;font-weight:600;margin-top:6px}
+.thumb.ph{filter:none}#pbtn{position:fixed;left:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:50}
+.pn{position:fixed;inset:0;z-index:100;background:#0a0a0a;overflow:auto;padding:calc(18px + env(safe-area-inset-top,0px)) 20px calc(40px + env(safe-area-inset-bottom,0px))}.pn .in{max-width:980px;margin:0 auto}.pn h2{font-size:2.2rem}.pn .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin:14px 0}
+.pn .it{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;border:1px solid #262626;background:#111;border-radius:18px;padding:14px 18px;margin:10px 0}.pn .it small{color:#a9a9a9;display:block}
+.pn form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:14px 0}.pn form label{background:#161616;border:1px solid #2e2e2e;border-radius:14px}.pn form .full{grid-column:1/-1}.pn textarea{resize:vertical}
+.mini{font:600 .85rem Manrope,sans-serif;background:#1c1c1c;color:#fff;border:1px solid #333;border-radius:999px;padding:7px 14px;cursor:pointer}.mini:hover{border-color:#fff}.mini.x{color:#ff9b9b}.st{font-size:.8rem;font-weight:700;border-radius:999px;padding:3px 10px;background:#222}
+.wa{transition:opacity .3s,transform .3s}.wa.off{opacity:0;transform:translateY(16px);pointer-events:none}#loginLink{display:inline-flex;opacity:.22;transition:opacity .25s}#loginLink:hover,#loginLink:focus-visible{opacity:.9}.pn.lg{background:rgba(0,0,0,.74);backdrop-filter:blur(14px)}.lgbox{max-width:400px;margin:14vh auto 0;background:#111;border:1px solid #2e2e2e;border-radius:28px;padding:32px;box-shadow:0 40px 90px -30px rgba(255,255,255,.22)}.lgbox h2{font-size:2rem}
+.hero h1{max-width:14ch}
+.gold{background:linear-gradient(115deg,#9c7421 0%,#e3c067 28%,#fff1b8 46%,#d3a73f 66%,#9c7421 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 6s ease-in-out infinite}
+#ekipi .ag{background:linear-gradient(115deg,#a67c1f 0%,#e6c46c 30%,#fff1b8 48%,#d4a843 68%,#9c7421 100%);background-size:220% 100%;border:1px solid #f6dc8a;color:#1a1200;animation:sheen 7s ease-in-out infinite;box-shadow:0 20px 40px -24px rgba(227,192,103,.55)}
+#ekipi .ag span{color:#4a3600}#ekipi .ag a{color:#1a1200}#ekipi .av{background:#14100a;color:#f1d98c;box-shadow:none}#ekipi .ag:hover{border-color:#fff}
+</style>
+</head>
+<body>
+<div class="util"><div class="wrap"><span><span data-k="phone"></span> &nbsp; <span data-k="email"></span></span><span>Shqip<a href="#">English</a><a href="#">Italiano</a></span></div></div>
+<div class="wrap">
+<div class="bar"><div class="in">
+<a class="logo" href="#"><svg viewBox="0 0 100 110" aria-hidden="true"><polygon points="0,36 46,0 46,110 0,110" fill="#cfcfcf"/><polygon points="54,0 100,36 100,110 54,110" fill="#f4f2ee"/></svg><span><b>RIOR</b><small>ESTATE</small></span></a>
+<nav><a href="#prona">Pronat</a><a href="#ekipi">Ekipi</a><a href="#blog">Blog</a><a href="#kontakt">Kontakt</a></nav>
+<a class="btn sm" href="#kontakt">Na kontakto</a>
+</div></div>
+
+<div class="hero">
+<svg class="heromark" viewBox="0 0 100 110" aria-hidden="true"><defs><linearGradient id="gl" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#8d8d8d"/><stop offset="1" stop-color="#f1f1f1"/></linearGradient><linearGradient id="gr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#e6e4df"/></linearGradient></defs><polygon class="hl" points="0,36 46,0 46,110 0,110" fill="url(#gl)"/><polygon class="hr" points="54,0 100,36 100,110 54,110" fill="url(#gr)"/></svg>
+<span class="pill"><i class="dot"></i>Përgjigje pa humbur kohë</span>
+<h1>Gjej <span class="gold-text">pronën tënde</span>, shpejt dhe saktë.</h1>
+<p class="lead" data-k="lead">Apartamente, vila dhe toka në Tiranë, Durrës, Vlorë, Sarandë dhe Shkodër. Çdo pronë kalon kontrollin e dokumenteve para se ta shihni.</p>
+<div class="tabs" id="tabs"><button type="button" data-v="Shitje" aria-pressed="false">Shitje</button><button type="button" data-v="Qera" aria-pressed="false">Qera</button></div>
+<div class="search" role="search">
+<label>Qyteti<select id="fQyteti"><option value="">Të gjitha</option><option>Tiranë</option><option>Durrës</option><option>Vlorë</option><option>Sarandë</option><option>Shkodër</option></select></label>
+<label>Lloji<select id="fLloji"><option value="">Të gjitha</option><option>Apartament</option><option>Vilë</option><option>Tokë</option><option>Lokal</option></select></label>
+<label>Shitje apo qera<select id="fVeprimi"><option value="">Të dyja</option><option>Shitje</option><option>Qera</option></select></label>
+<label>Çmimi maksimal (€)<input id="fCmimi" type="number" min="0" step="1000" placeholder="p.sh. 150000"></label>
+<button class="btn" id="btnKerko" type="button">Kërko</button>
+</div>
+</div>
+
+<section id="prona" style="padding-top:20px">
+<div class="head"><div><h2>Pronat e zgjedhura</h2><p class="sub" id="numri"></p></div>
+<div class="chips" id="chips"></div></div>
+<div class="grid" id="lista"></div>
+</section>
+
+<section id="pse-ne">
+<div class="head"><div><h2>Një proces pa surpriza</h2><p class="sub">Nga vizita e parë deri te çelësat në dorë.</p></div></div>
+<div class="bento">
+<div class="tile big dark"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div><h3>Dokumenta të verifikuara</h3><p>Kontrollojmë certifikatën e pronësisë dhe hipotekën në ZVRPP para çdo pagese.</p></div>
+<div class="tile big"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10z"/><path d="M10 20v-6h4v6"/></svg></div><h3>Shitje dhe blerje</h3><p>Çmim tregu i vlerësuar me kujdes dhe negocim në emrin tuaj.</p></div>
+<div class="tile big"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v4"/></svg></div><h3>Qera afatgjatë</h3><p>Qeramarrës të besueshëm dhe kontratë e gatshme.</p></div>
+<div class="tile big"><div class="ico"><svg viewBox="0 0 24 24"><path d="M5 5h14v10H9l-4 4z"/></svg></div><h3>Shoqërim te noteri</h3><p>Ju shoqërojmë deri në nënshkrimin e kontratës.</p></div>
+</div>
+</section>
+
+<section id="ekipi" style="padding-top:20px"><div class="head"><div><h2 class="gold">Ekipi ynë</h2><p class="sub">Agjentët që do t’ju shoqërojnë në çdo hap.</p></div></div><div class="team" id="ekipiList"></div></section>
+<section id="blog" style="padding-top:20px">
+<div class="head"><div><h2>Këshilla nga ekspertët</h2><p class="sub">Udhëzues të shkurtër për blerës, shitës dhe investitorë.</p></div></div>
+<div class="blog"><article><small>Blerës të huaj</small><h3>Si të blini pronë në Shqipëri nga jashtë</h3><p>Hapat kryesorë dhe dokumentet që duhen përpara nënshkrimit.</p></article><article><small>Dokumenta</small><h3>Çfarë të kontrolloni te certifikata e pronësisë</h3><p>Pesë pika që nuk duhen anashkaluar para çdo pagese.</p></article><article><small>Shitës</small><h3>Si ta përgatisni pronën për shitje</h3><p>Hapat e thjeshtë që e bëjnë një pronë më tërheqëse për blerësit.</p></article></div>
+</section>
+<section style="padding-top:20px">
+<div class="band light"><div><h2>Punoni me emrin Rior Estate</h2><p>Dëshironi ta përdorni emrin tonë? Na kontaktoni për kushtet e bashkëpunimit.</p><a class="btn" href="#kontakt">Apliko si partner</a></div><ul><li>Sistem i përbashkët për pronat dhe klientët</li><li>Trajnim dhe mentorim për shitjet</li><li>Marketing dhe markë e gatshme</li></ul></div>
+</section>
+<section id="kontakt">
+<div class="contact">
+<div><h2>Le të <span class="gold-text">flasim</span></h2>
+<p data-k="addr"></p><p data-k="phone"></p><p data-k="email"></p><p data-k="hours"></p></div>
+<form id="forma">
+<label>Emri<input required name="emri"></label>
+<label>Telefoni ose email<input required name="kontakt"></label>
+<label>Mesazhi<textarea rows="3" name="msg"></textarea></label>
+<button class="btn" type="submit">Dërgo mesazhin</button>
+<div id="ok" role="status"></div>
+</form></div>
+</section>
+<a class="btn wa" href="https://wa.me/355690000000">WhatsApp</a>
+<footer><span>© 2026 Rior Estate sh.p.k.</span><a href="#" id="loginLink" aria-label="Hyrje për stafin"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></a></footer>
+</div>
+
+<div id="panel" class="pn" hidden></div>
+<script>
+const SITE={k:{},properties:[],agents:[]};let PRONAT=[];const agName=p=>p.by||"";
+const $=id=>document.getElementById(id);
+const eur=n=>"€"+n.toLocaleString("de-DE");
+const bld='<svg viewBox="0 0 100 70" fill="#fff"><rect x="5" y="30" width="22" height="40"/><rect x="32" y="12" width="26" height="58"/><rect x="63" y="24" width="18" height="46"/><rect x="85" y="38" width="12" height="32"/></svg>';
+let chip="";
+const qytete=["Tiranë","Durrës","Vlorë","Sarandë","Shkodër"];
+function chips(){$("chips").innerHTML=["Të gjitha",...qytete].map(c=>`<button class="chip" aria-pressed="${(c==="Të gjitha"?"":c)===chip}" data-c="${c}">${c}</button>`).join("")}
+$("chips").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;chip=b.dataset.c==="Të gjitha"?"":b.dataset.c;$("fQyteti").value=chip;shfaq()});
+function shfaq(){
+ const q=$("fQyteti").value,l=$("fLloji").value,v=$("fVeprimi").value,c=Number($("fCmimi").value)||0;chip=q;chips();
+ const r=PRONAT.filter(p=>(!q||p.q===q)&&(!l||p.l===l)&&(!v||p.v===v)&&(!c||p.c<=c));
+ $("numri").textContent=r.length+(r.length===1?" pronë e gjetur":" prona të gjetura");
+ $("lista").innerHTML=r.length?r.map(p=>`<article class="card"><div class="thumb${p.img?" ph":""}" style="background:${p.img?"url("+p.img+") center/cover":"linear-gradient(135deg,"+(p.col||["#111","#444"]).join(",")+")"}">${p.img?"":bld}<span class="badge">${p.v}</span>${esc(p.q)}</div><div class="b"><h3>${esc(p.t)}</h3><div class="price">${eur(p.c)}${p.v==="Qera"?" / muaj":""}</div><div class="meta">${esc(p.l)} · ${p.m} m² · ${esc(p.d)}</div>${agName(p)?`<div class="meta">Agjenti: ${esc(agName(p))}</div>`:""}</div></article>`).join(""):`<div class="empty">Asnjë pronë nuk përputhet me filtrat. Provoni një çmim më të lartë ose zgjidhni “Të gjitha”.</div>`;
+}
+["fQyteti","fLloji","fVeprimi","fCmimi"].forEach(i=>$(i).addEventListener("change",shfaq));
+$("btnKerko").addEventListener("click",()=>{shfaq();$("prona").scrollIntoView()});
+$("forma").addEventListener("submit",e=>{e.preventDefault();const f=e.target,b=f.querySelector("button");
+ if(!(window.google&&google.script&&google.script.run)){$("ok").textContent="Lidhja me serverin mungon.";return}
+ b.disabled=true;$("ok").textContent="Po dërgohet…";
+ google.script.run.withSuccessHandler(()=>{$("ok").textContent="Faleminderit! Do t’ju kontaktojmë brenda ditës.";f.reset();b.disabled=false}).withFailureHandler(()=>{$("ok").textContent="Mesazhi nuk u dërgua. Provoni përsëri ose shkruani në WhatsApp.";b.disabled=false}).sendMessage(f.emri.value,f.kontakt.value,f.msg.value)});
+$("tabs").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const on=b.getAttribute("aria-pressed")==="true";$("fVeprimi").value=on?"":b.dataset.v;shfaq();$("prona").scrollIntoView()});
+const _s=shfaq;shfaq=function(){_s();document.querySelectorAll("#tabs button").forEach(b=>b.setAttribute("aria-pressed",$("fVeprimi").value===b.dataset.v))};
+shfaq();
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function sync(){PRONAT=SITE.properties;
+ document.querySelectorAll("[data-k]").forEach(e=>{if(SITE.k[e.dataset.k]!=null)e.textContent=SITE.k[e.dataset.k]});
+ document.querySelectorAll(".wa").forEach(e=>{if(SITE.k.wa){e.href="https://wa.me/"+SITE.k.wa;e.target="_blank";e.rel="noopener"}});
+ document.getElementById("ekipiList").innerHTML=SITE.agents.map(a=>`<div class="ag"><div class="av">${esc(a.n.charAt(0))}</div><b>${esc(a.n)}</b><span>${esc(a.r)}</span><a href="tel:${esc(a.ph)}" target="_blank">${esc(a.ph)}</a></div>`).join("");
+ document.getElementById("ekipi").hidden=!SITE.agents.length;shfaq();
+ if(!PRONAT.length){$("numri").textContent="";$("lista").innerHTML='<div class="empty">Pronat e para do të shfaqen së shpejti.</div>'}}
+document.getElementById("loginLink").onclick=e=>{e.preventDefault();const P=document.getElementById("panel");P.classList.add("lg");P.hidden=false;
+ P.innerHTML='<div class="lgbox"><h2>Hyrje për stafin</h2><p class="sub">Hyrja bëhet me llogarinë tuaj Google. Vetëm personat e ftuar kanë akses.</p><div style="display:grid;gap:10px"><a class="btn" href="https://drive.google.com/drive/my-drive" target="_blank" rel="noopener">Administrator</a><a class="btn ghost" href="https://drive.google.com/drive/shared-with-me" target="_blank" rel="noopener">Agjent</a><button class="mini" id="cl" type="button">Mbyll</button></div></div>';
+ document.getElementById("cl").onclick=()=>{P.hidden=true}};
+if(window.google&&google.script&&google.script.run)google.script.run.withSuccessHandler(d=>{Object.assign(SITE,d);sync()}).withFailureHandler(()=>sync()).getData();else sync();
+</script>
+</body>
+</html>
